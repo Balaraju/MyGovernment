@@ -1,1 +1,19 @@
 # for mandals
+mandals = []
+while i<39
+  hash = {}
+   hash[:district] = data.css('td')[i].text
+   hash[:places]=[]
+    data.css('td')[i+2].css('ol li').each do |dat|
+       hash[:places]<< dat.text
+     end
+  mandals << hash
+   i = i+3
+ end
+mandals.each do |mandal|
+	id = District.find_by_name(mandal[:district]).id
+	mandal[:places].each do |place|
+		Place.create(name: place,district_id:id)
+	end
+end
+
