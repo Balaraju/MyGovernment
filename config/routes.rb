@@ -24,9 +24,12 @@ Rails.application.routes.draw do
   end
 
 
+
+  match "/search_services" => "search#search_services", via: [:get]
+
   match '/categories_list' => "categories#categories_list", via: [:get] 
 
-  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

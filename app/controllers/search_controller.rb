@@ -2,12 +2,11 @@ class SearchController < ApplicationController
 
 
 	def search_services
-		if params[:term].nil?
-      services = []
-      render :json=> { :success => false, :services => services }
+		if params[:term].present?
+		  services = Service.where("name LIKE ?", "%#{params[:term]}%")  
+      render :json=> { :success => true, :services => services }
 	  else
-	    services = Service.search params[:term]
-	    render :json=> { :success => false, :services => services }
+	    render :json=> { :success => false, :services => {} }
 	  end
 	end
 
