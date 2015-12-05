@@ -1,4 +1,7 @@
 # for mandals
+ require 'nokogiri'
+ require 'open-uri'
+ 
 doc = Nokogiri::HTML(open('https://en.wikipedia.org/wiki/List_of_mandals_in_Andhra_Pradesh'))
 data = doc.css('tr')
 data.shift

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       post 'update_department'
       get 'total_departments'
       get 'total_services'
+      get 'place_data'
     end
   end
 

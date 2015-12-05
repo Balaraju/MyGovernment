@@ -34,4 +34,12 @@ include ActionController::MimeResponds
 		end
 	end
 
+	def place_data
+		@places = Place.all
+		respond_to do |format|
+			format.html
+			format.xls
+		end
+	end
+
 end
