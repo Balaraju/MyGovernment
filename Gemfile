@@ -20,6 +20,11 @@ gem 'nokogiri'
 #To Read Excel
 gem 'roo', '~> 2.1.0'
 
+
+#Redis Services
+gem 'redis', '~>3.2'
+gem 'rack-contrib'
+gem 'soulmate', :require => 'soulmate/server'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

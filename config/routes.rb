@@ -23,10 +23,15 @@ Rails.application.routes.draw do
     end
   end
 
+resources :services
+
+
+  match "/search_services" => "search#search_services", via: [:get]
 
   match '/categories_list' => "categories#categories_list", via: [:get] 
 
-  
+   mount Soulmate::Server, :at => "/autocomplete"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
