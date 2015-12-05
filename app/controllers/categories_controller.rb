@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
 	end
 
 	def categories_list
-		categories = Category.all.map(&:name)
+		categories = Category.all
 		render :json=> { :success => true, :category => categories }
 	end
 end

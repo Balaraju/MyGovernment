@@ -1,10 +1,10 @@
-require 'elasticsearch/model'
-
 class Service < ActiveRecord::Base
 
 	validates :name, presence: true
 	validates_uniqueness_of :name
 	belongs_to :department
+
+	has_many :categories, :through => :service_categories
 
 	has_many :service_categories
 	has_many :service_offices
