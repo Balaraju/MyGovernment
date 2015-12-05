@@ -1,0 +1,15 @@
+#Please find state.xlsx in the Public folder
+xlsx = Roo::Excelx.new('/home/etekidev/work/MyGovernment/public/state.xlsx')
+
+
+#For Creating States 
+xlsx.default_sheet = xlsx.sheets[1]
+(xlsx.first_row+1..xlsx.last_row).each do |i|
+	State.create(name: xlsx.row(i)[1])
+end
+
+#For Creating Districts
+xlsx.default_sheet = xlsx.sheets[2]
+(xlsx.first_row+1..xlsx.last_row).each do |i|
+	District.create(name: xlsx.row(i)[1], state_id: xlsx.row(i)[2])
+end
