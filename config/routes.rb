@@ -16,6 +16,18 @@ Rails.application.routes.draw do
   end
 
 
+  resources :users do 
+    collection do
+      post "sign_in"
+      post "sign_out"
+    end
+  end
+
+
+  match '/categories_list' => "categories#categories_list", via: [:get] 
+
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

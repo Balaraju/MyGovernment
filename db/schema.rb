@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205091010) do
+ActiveRecord::Schema.define(version: 20151205100148) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 20151205091010) do
     t.integer  "category_id", limit: 4
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+  end
+
+  create_table "device_authentications", force: :cascade do |t|
+    t.integer  "user_id",              limit: 4
+    t.string   "authentication_token", limit: 255
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "districts", force: :cascade do |t|
