@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+
+
+  resources :categories do
+    collection do
+      post 'create_category'
+      post 'update_category'
+    end
+  end
+
+  resources :departments do
+    collection do
+      post 'create_department'
+      post 'update_department'
+    end
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
