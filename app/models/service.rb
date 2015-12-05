@@ -14,7 +14,7 @@ class Service < ActiveRecord::Base
 
   def self.search(term)
     matches = Soulmate::Matcher.new('Services').matches_for_term(term)
-    matches.collect {|match| {"id" => match["id"], "label" => match["term"], "value" => match["term"] } }
+    matches.collect {|match| {"id" => match["id"], "label" => match["term"], "link" => match["data"]["link"]} }
   end
 
 
@@ -23,7 +23,7 @@ private
 	def load_into_soulmate
 		loader = Soulmate::Loader.new("Services")
 		loader.add("term" => name, "id" => self.id, "data" => {
-			"link" => Rails.application.routes.url_helpers.service_path(self)
+			"link" => Rails.application.routes.url_helpers.service_path(self.id)
 	   	})
 	end
 
