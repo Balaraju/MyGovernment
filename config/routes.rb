@@ -26,12 +26,16 @@ Rails.application.routes.draw do
     end
   end
 
-resources :services
+  resources :services
 
+
+  match "/departments_list" => "department#department_list", via: [:get]
 
   match "/search_services" => "search#search_services", via: [:get]
 
   match '/categories_list' => "categories#categories_list", via: [:get] 
+
+  match '/services_list' => "services#services_list", via: [:get]
 
    mount Soulmate::Server, :at => "/autocomplete"
 

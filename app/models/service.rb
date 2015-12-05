@@ -4,8 +4,6 @@ class Service < ActiveRecord::Base
 	validates_uniqueness_of :name
 	belongs_to :department
 
-	has_many :categories, :through => :service_categories
-
 	has_many :service_categories
 	has_many :service_offices
 

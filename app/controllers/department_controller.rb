@@ -1,7 +1,7 @@
 class DepartmentController < ApplicationController
-
 	#respond_to :json
 include ActionController::MimeResponds
+
 	def create_category
 		department = Department.new(name: params[:name])
 		if department.save
@@ -11,11 +11,16 @@ include ActionController::MimeResponds
 		end
 	end
 
-	def update_category
+	def update_department
 		department = Department.find(params[:id])
 		department.update name: params[:name]
 		render :json=> { :success => true, :department => department }
 	end
+
+
+	def department_list
+		departments = Department.all
+		render :json=> { :success => true, :department => departments }
 
 	def total_departments
 		@departments = Department.all
