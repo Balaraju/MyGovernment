@@ -13,3 +13,136 @@ xlsx.default_sheet = xlsx.sheets[2]
 (xlsx.first_row+1..xlsx.last_row).each do |i|
 	District.create(name: xlsx.row(i)[1], state_id: xlsx.row(i)[2])
 end
+ # For Creating Services
+
+ require 'nokogiri'
+ require 'open-uri'
+
+ services = []
+ departments = []
+ 
+ doc = Nokogiri::HTML(open('http://ap.meeseva.gov.in/DeptPortal/UserInterface/Services.html'))
+
+ # departments
+ doc.css("td[width='121']").each do |link|
+  departments << link.text
+ end
+
+ departments.delete(departments[0])
+ departments.each do |department|
+  Department.create(name: department)
+ end
+ # services
+
+ doc.css("td[width='520']").each do |link|
+  services << link.text
+ end
+ 
+ services.delete(services[0])
+ 
+ services.each do |service|
+  Service.create(name: service)
+ end
+ 
+
+Service.firs(3).each do |service|
+  service.update department_id: 1
+end
+
+(4..75).each do |ele|
+ Service.find(ele).update department_id: 2
+end	
+
+(76..92).each do |ele|
+ Service.find(ele).update department_id: 3
+end
+
+(93..109).each do |ele|
+ Service.find(ele).update department_id: 4
+end
+
+(110..113).each do |ele|
+ Service.find(ele).update department_id: 5
+end
+
+(113..127).each do |ele|
+ Service.find(ele).update department_id: 6
+end
+
+(128..131).each do |ele|
+ Service.find(ele).update department_id: 7
+end
+
+(132..135).each do |ele|
+ Service.find(ele).update department_id: 8
+end
+
+(136..143).each do |ele|
+ Service.find(ele).update department_id: 9
+end
+
+
+(144..154).each do |ele|
+ Service.find(ele).update department_id: 10
+end
+
+(155..165).each do |ele|
+ Service.find(ele).update department_id: 11
+end
+
+(166..177).each do |ele|
+ Service.find(ele).update department_id: 12
+end
+
+(178..211).each do |ele|
+ Service.find(ele).update department_id: 13
+end
+
+(212..217).each do |ele|
+ Service.find(ele).update department_id: 14
+end
+
+(218..220).each do |ele|
+ Service.find(ele).update department_id: 15
+end
+
+(221..222).each do |ele|
+ Service.find(ele).update department_id: 16
+end
+
+(223..224).each do |ele|
+ Service.find(ele).update department_id: 17
+end
+
+(225..234).each do |ele|
+ Service.find(ele).update department_id: 18
+end
+(235..236).each do |ele|
+ Service.find(ele).update department_id: 19
+end
+(237..241).each do |ele|
+ Service.find(ele).update department_id: 20
+end
+
+ Service.find(242).update department_id: 21
+
+ (243..246).each do |ele|
+ Service.find(ele).update department_id: 22
+end
+
+(247..252).each do |ele|
+ Service.find(ele).update department_id: 23
+end
+
+(253..255).each do |ele|
+ Service.find(ele).update department_id: 24
+end
+Service.find(256).update department_id: 25
+
+(257..260).each do |ele|
+ Service.find(ele).update department_id: 26
+end
+
+(261..271).each do |ele|
+ Service.find(ele).update department_id: 27
+end

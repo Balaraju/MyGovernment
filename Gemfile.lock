@@ -128,6 +128,7 @@ DEPENDENCIES
   elasticsearch-model
   elasticsearch-rails
   mysql2
+  nokogiri
   rack-cors
   rails (= 4.2.5)
   rails-api
@@ -135,4 +136,4 @@ DEPENDENCIES
   spring
 
 BUNDLED WITH
-   1.10.5
+   1.10.6

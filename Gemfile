@@ -15,7 +15,7 @@ gem 'elasticsearch-rails'
 
 gem 'rack-cors', :require => 'rack/cors'
 
-
+gem 'nokogiri'
 
 #To Read Excel
 gem 'roo', '~> 2.1.0'
