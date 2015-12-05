@@ -8,10 +8,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :departments do
+  resources :department do
     collection do
       post 'create_department'
       post 'update_department'
+      get 'total_departments'
+      get 'total_services'
     end
   end
 
