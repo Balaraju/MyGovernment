@@ -133,6 +133,3 @@ DEPENDENCIES
   rails-api
   roo (~> 2.1.0)
   spring
-
-BUNDLED WITH
-   1.10.5
