@@ -32,4 +32,3 @@ private
 	    loader.remove("id" => self.id)
 	end
 end
-
