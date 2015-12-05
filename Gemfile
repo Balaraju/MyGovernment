@@ -16,6 +16,10 @@ gem 'elasticsearch-rails'
 gem 'rack-cors', :require => 'rack/cors'
 
 
+
+#To Read Excel
+gem 'roo', '~> 2.1.0'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
