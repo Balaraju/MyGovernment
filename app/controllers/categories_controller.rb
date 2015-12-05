@@ -16,4 +16,9 @@ class CategoriesController < ApplicationController
 		category.update name: params[:name]
 		render :json=> { :success => true, :category => category }
 	end
+
+	def categories_list
+		categories = Category.all.map(&:name)
+		render :json=> { :success => true, :category => categories }
+	end
 end
