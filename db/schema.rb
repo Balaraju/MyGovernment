@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205100148) do
+ActiveRecord::Schema.define(version: 20151205185150) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -47,6 +47,13 @@ ActiveRecord::Schema.define(version: 20151205100148) do
     t.datetime "updated_at",              null: false
   end
 
+  create_table "places", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.integer  "district_id", limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
   create_table "service_categories", force: :cascade do |t|
     t.string   "category_type", limit: 255
     t.integer  "category_id",   limit: 4
@@ -70,6 +77,7 @@ ActiveRecord::Schema.define(version: 20151205100148) do
     t.integer  "service_id",      limit: 4
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
+    t.integer  "place_id",        limit: 4
   end
 
   create_table "services", force: :cascade do |t|
