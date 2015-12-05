@@ -1,5 +1,10 @@
 # for mandals
+doc = Nokogiri::HTML(open('https://en.wikipedia.org/wiki/List_of_mandals_in_Andhra_Pradesh'))
+data = doc.css('tr')
+data.shift
+data.pop
 mandals = []
+i=0
 while i<39
   hash = {}
    hash[:district] = data.css('td')[i].text
