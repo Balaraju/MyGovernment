@@ -10,8 +10,6 @@ gem 'spring', :group => :development
 
 gem 'mysql2'
 
-gem 'elasticsearch-model'
-gem 'elasticsearch-rails'
 
 gem 'rack-cors', :require => 'rack/cors'
 

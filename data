@@ -45,7 +45,7 @@ end
  end
  
 
-Service.firs(3).each do |service|
+Service.first(3).each do |service|
   service.update department_id: 1
 end
 
@@ -117,9 +117,13 @@ end
 (225..234).each do |ele|
  Service.find(ele).update department_id: 18
 end
+
+
 (235..236).each do |ele|
  Service.find(ele).update department_id: 19
 end
+
+
 (237..241).each do |ele|
  Service.find(ele).update department_id: 20
 end
@@ -146,3 +150,7 @@ end
 (261..271).each do |ele|
  Service.find(ele).update department_id: 27
 end
+
+
+doc = Nokogiri::HTML(open('http://passportindia.gov.in/AppOnlineProject/online/welComeMessage'))
+
