@@ -45,7 +45,7 @@ end
  end
  
 
-Service.firs(3).each do |service|
+Service.first(3).each do |service|
   service.update department_id: 1
 end
 

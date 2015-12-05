@@ -1,14 +1,5 @@
-require 'elasticsearch/model'
-
 class District < ActiveRecord::Base
-	include Elasticsearch::Model
-    include Elasticsearch::Model::Callbacks
-
 	validates :name, presence: true
 	belongs_to :state
-	has_many :municipalities
-
-
+	has_many :places
 end
-
-District.import force: true
