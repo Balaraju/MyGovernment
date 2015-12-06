@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     collection do
       post 'create_category'
       post 'update_category'
+      get 'state_data'
+      get 'district_data'
     end
   end
 
@@ -28,6 +30,7 @@ Rails.application.routes.draw do
 
   resources :services
 
+  resources :service_categories, only: :show
 
   match "/departments_list" => "department#department_list", via: [:get]
 

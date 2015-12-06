@@ -20,6 +20,9 @@ gem 'roo', '~> 2.1.0'
 gem 'redis', '~>3.2'
 gem 'rack-contrib'
 gem 'soulmate', :require => 'soulmate/server'
+
+#For Jbuilder 
+gem 'jbuilder', '~> 2.3', '>= 2.3.2'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

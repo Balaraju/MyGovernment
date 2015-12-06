@@ -21,4 +21,17 @@ class CategoriesController < ApplicationController
 		categories = Category.all
 		render :json=> { :success => true, :category => categories }
 	end
+
+	def state_data
+		@states = State.all
+		render :json => {:success => true, :states => @states}
+	end
+
+	def district_data
+		@districts = District.all
+		render :json => {:success => true, :districts => @districts }
+	end
+
+
+
 end
